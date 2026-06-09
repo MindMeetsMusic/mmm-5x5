@@ -12,17 +12,12 @@
   --purple:#5b3476;
   --light:#f8fbfc;
   --dark:#202124;
+  --highlight:#f4e8f0;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   font-family:Arial, Helvetica, sans-serif;
@@ -37,10 +32,7 @@ body{
   padding:24px;
 }
 
-.hero{
-  text-align:center;
-  padding:40px 0 20px;
-}
+.hero{text-align:center;padding:40px 0 20px}
 
 .logo{
   max-width:320px;
@@ -80,25 +72,11 @@ h1{
   transition:.2s ease;
 }
 
-.btn:hover{
-  transform:translateY(-2px);
-}
+.btn:hover{transform:translateY(-2px)}
 
-.btn-primary{
-  background:var(--magenta);
-  color:white;
-}
-
-.btn-secondary{
-  background:var(--teal);
-  color:white;
-}
-
-.btn-outline{
-  border:2px solid var(--purple);
-  color:var(--purple);
-  background:white;
-}
+.btn-primary{background:var(--magenta);color:white}
+.btn-secondary{background:var(--teal);color:white}
+.btn-outline{border:2px solid var(--purple);color:var(--purple);background:white}
 
 .instructions{
   margin:50px 0;
@@ -107,7 +85,7 @@ h1{
 
 .pill{
   display:inline-block;
-  background:#f4e8f0;
+  background:var(--highlight);
   color:var(--magenta);
   padding:8px 14px;
   border-radius:999px;
@@ -128,6 +106,7 @@ h1{
   border-radius:18px;
   padding:24px;
   text-align:left;
+  scroll-margin-top:24px;
 }
 
 .step-number{
@@ -142,10 +121,21 @@ h1{
 }
 
 .arrow{
+  display:block;
   text-align:center;
   font-size:2rem;
   color:var(--teal);
   margin-top:20px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.highlight{
+  background:var(--highlight);
+  color:var(--magenta);
+  padding:2px 6px;
+  border-radius:6px;
+  font-weight:bold;
 }
 
 .step .btn{
@@ -165,9 +155,7 @@ h1{
   margin:40px 0;
 }
 
-.video{
-  margin:60px 0;
-}
+.video{margin:60px 0}
 
 .video iframe{
   width:100%;
@@ -229,10 +217,7 @@ h1{
 }
 
 @media(max-width:640px){
-  .btn{
-    width:100%;
-  }
-
+  .btn{width:100%}
   .sticky-vote{
     right:12px;
     bottom:12px;
@@ -244,18 +229,17 @@ h1{
 
 <body>
 
-  <script>
+<script>
 window.onload = function() {
   window.scrollTo(0,0);
 };
 </script>
-  
+
 <div class="container">
 
 <section class="hero">
 
-<img class="logo"
-src="https://static.wixstatic.com/media/52c709_f273906f14d04743bb22e0cf99fd8cea~mv2.png/v1/fill/w_276,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/MindMeetsMusic_Horz_FullColor.png">
+<img class="logo" src="https://static.wixstatic.com/media/52c709_f273906f14d04743bb22e0cf99fd8cea~mv2.png/v1/fill/w_276,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/MindMeetsMusic_Horz_FullColor.png">
 
 <h1>Help Mind Meets Music Win Start Garden 5×5</h1>
 
@@ -276,40 +260,37 @@ Your vote can help bring proven movement and music-based learning experiences to
 
 <div class="steps">
 
-<div class="step">
+<div class="step" id="step-1">
 <div class="step-number">1</div>
 <h3>Register</h3>
 <p>
 Go to the Start Garden contest page and click or tap the <strong>Register</strong> button at the top of the page.
 </p>
-<div class="arrow">→</div>
+<p style="margin-top:10px;">
+Already registered? Skip to Step 3 and vote.
+</p>
+<a class="arrow" href="#step-2">→</a>
 </div>
 
-<div class="step">
+<div class="step" id="step-2">
 <div class="step-number">2</div>
 <h3>Come Back Here</h3>
 
 <p>
-<strong>
 After registering, you may land on a page asking for a lot of additional information.
-You do not need to fill that out.
-</strong>
+<span class="highlight">You do not need to fill that out.</span>
 </p>
 
 <p style="margin-top:10px;">
-If you see that page, you're already registered.
-Close the tab and come back here.
+If you see that page, you're already registered. Close the tab and come back here.
 </p>
 
-<a class="btn btn-primary"
-href="https://contests.startgarden.com/"
-target="_blank">
+<a class="btn btn-primary" href="https://contests.startgarden.com/" target="_blank">
 REGISTER
 </a>
-
 </div>
 
-<div class="step">
+<div class="step" id="step-3">
 <div class="step-number">3</div>
 <h3>Vote for Mind Meets Music</h3>
 
@@ -317,12 +298,9 @@ REGISTER
 On the voting page, look for the button that says <strong>Vote</strong>, not “Register to Vote.”
 </p>
 
-<a class="btn btn-secondary"
-href="https://contests.startgarden.com/ideas/mind-meets-music-5/"
-target="_blank">
+<a class="btn btn-secondary" href="https://contests.startgarden.com/ideas/mind-meets-music-5/" target="_blank">
 VOTE NOW
 </a>
-
 </div>
 
 </div>
@@ -330,100 +308,65 @@ VOTE NOW
 </section>
 
 <div class="stay-connected">
-<a class="btn btn-outline" href="#connect">
-STAY CONNECTED
-</a>
+<a class="btn btn-outline" href="#connect">STAY CONNECTED</a>
 </div>
 
 <section class="video" id="learn-more">
 
-<a class="sticky-vote"
-href="https://contests.startgarden.com/ideas/mind-meets-music-5/"
-target="_blank">
+<a class="sticky-vote" href="#voting">
 CAST YOUR VOTE
 </a>
 
-<h2 class="section-title">
-See Mind Meets Music In Action
-</h2>
+<h2 class="section-title">See Mind Meets Music In Action</h2>
 
-<iframe
-src="https://www.youtube.com/embed/Fe8lKNBM-40"
-allowfullscreen>
-</iframe>
+<iframe src="https://www.youtube.com/embed/Fe8lKNBM-40" allowfullscreen></iframe>
 
 </section>
 
-<h2 class="section-title">
-Why Mind Meets Music Matters
-</h2>
+<h2 class="section-title">Why Mind Meets Music Matters</h2>
 
 <div class="cards">
 
 <div class="card">
 <h3>The Origin Story</h3>
-<p>
-A choir director asked students to write thank-you notes after a performance. Many couldn't write them. That moment became the spark for Mind Meets Music.
-</p>
+<p>A choir director asked students to write thank-you notes after a performance. Many couldn't write them. That moment became the spark for Mind Meets Music.</p>
 </div>
 
 <div class="card">
 <h3>The Outcomes</h3>
-<p>
-12.1 percentage point literacy gains. Achievement gaps reduced by 69% in Title I schools.
-</p>
+<p>12.1 percentage point literacy gains. Achievement gaps reduced by 69% in Title I schools.</p>
 </div>
 
 <div class="card">
 <h3>The Interruption</h3>
-<p>
-After reaching 15,000 students, Dr. Monique Salinas suffered a near-fatal accident. The program closed. Nine years later, she returned to rebuild it.
-</p>
+<p>After reaching 15,000 students, Dr. Monique Salinas suffered a near-fatal accident. The program closed. Nine years later, she returned to rebuild it.</p>
 </div>
 
 <div class="card">
 <h3>The Pilot</h3>
-<p>
-11 classrooms. 5 schools. 140 sessions. 92% implementation fidelity and outstanding teacher feedback.
-</p>
+<p>11 classrooms. 5 schools. 140 sessions. 92% implementation fidelity and outstanding teacher feedback.</p>
 </div>
 
 <div class="card">
 <h3>The Scale</h3>
-<p>
-The digital platform can bring the same curriculum to more than 65,000 elementary schools nationwide.
-</p>
+<p>The digital platform can bring the same curriculum to more than 65,000 elementary schools nationwide.</p>
 </div>
 
 <div class="card">
 <h3>The Number That Matters</h3>
-<p>
-$16.65 per student per year. Less than the cost of two school lunches.
-</p>
+<p>$16.65 per student per year. Less than the cost of two school lunches.</p>
 </div>
 
 </div>
 
 <div class="footer" id="connect">
 
-<h2 class="section-title">
-Stay Connected
-</h2>
+<h2 class="section-title">Stay Connected</h2>
 
 <div class="socials">
-
-<a href="https://www.mindmeetsmusic.com/" target="_blank">
-Website
-</a>
-
-<a href="https://www.facebook.com/MindMeetsMusic" target="_blank">
-Facebook
-</a>
-
-<a href="https://www.linkedin.com/in/monique-salinas-phd-mind-meets-music-ba66a514/" target="_blank">
-LinkedIn
-</a>
-
+<a href="https://www.mindmeetsmusic.com/" target="_blank">Website</a>
+<a href="https://www.facebook.com/MindMeetsMusic" target="_blank">Facebook</a>
+<a href="https://www.linkedin.com/in/monique-salinas-phd-mind-meets-music-ba66a514/" target="_blank">LinkedIn</a>
 </div>
 
 </div>
