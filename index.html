@@ -1,121 +1,448 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Help Mind Meets Music Win Start Garden 5x5</title>
+<title>Help Mind Meets Music Win Start Garden 5×5</title>
+
 <style>
-:root{--teal:#61b69d;--magenta:#b52e76;--purple:#5b3476;--yellow:#FFD447;--light:#F8FBFC;--dark:#202124}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:white;color:var(--dark);line-height:1.6}
-.container{max-width:1100px;margin:auto;padding:24px}
-.hero{text-align:center;padding:32px 12px 18px}
-.logo{max-width:300px;width:100%;margin-bottom:22px}
-h1{font-size:clamp(2rem,6vw,4rem);line-height:1.1;margin-bottom:16px;color:var(--purple)}
-.subhead{font-size:1.2rem;max-width:750px;margin:0 auto 24px}
-.button-group{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-width:210px;padding:16px 24px;border-radius:999px;text-decoration:none;font-weight:bold;font-size:1rem;text-align:center}
-.btn-primary{background:var(--magenta);color:white}
-.btn-secondary{background:var(--teal);color:white}
-.btn-outline{border:2px solid var(--purple);color:var(--purple);background:white}
-.pill{display:inline-block;background:#f3e8f0;color:var(--magenta);font-weight:bold;letter-spacing:.08em;font-size:.75rem;padding:7px 13px;border-radius:999px;margin-bottom:18px}
-.section-title{text-align:center;margin-bottom:26px;font-size:2rem;color:var(--purple)}
-.instructions{margin:28px 0 48px;text-align:center}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;text-align:left}
-.step{background:var(--light);padding:24px;border-radius:18px;border:1px solid #eef2f2}
-.step-number{font-size:2rem;font-weight:bold;color:var(--magenta)}
-.step h3{color:var(--purple);margin-bottom:8px}
-.step .btn{margin-top:18px;width:100%}
-.arrow{font-size:2rem;color:var(--teal);text-align:center;margin-top:18px;font-weight:bold}
-.stay-connected{text-align:center;margin:44px 0}
-.video{margin:52px 0;position:relative}
-.video iframe{width:100%;aspect-ratio:16/9;border:none;border-radius:20px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:white;border:2px solid #eee;border-radius:18px;padding:24px}
-.card h3{color:var(--magenta);margin-bottom:10px}
-.footer{margin-top:60px;text-align:center;padding:40px 0}
-.socials{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:20px}
-.socials a{text-decoration:none;color:var(--teal);font-weight:bold}
-.sticky-vote{position:fixed;right:16px;bottom:16px;z-index:99;box-shadow:0 8px 24px rgba(0,0,0,.18);min-width:auto;padding:14px 18px}
-@media(max-width:640px){.btn{width:100%}.sticky-vote{right:12px;bottom:12px;width:auto;min-width:auto;font-size:.85rem}}
+:root{
+  --teal:#61b69d;
+  --magenta:#b52e76;
+  --purple:#5b3476;
+  --light:#f8fbfc;
+  --dark:#202124;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--dark);
+  background:#fff;
+  line-height:1.6;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:24px;
+}
+
+.hero{
+  text-align:center;
+  padding:40px 0 20px;
+}
+
+.logo{
+  max-width:320px;
+  width:100%;
+  margin-bottom:24px;
+}
+
+h1{
+  color:var(--purple);
+  font-size:clamp(2rem,6vw,4rem);
+  line-height:1.1;
+  margin-bottom:18px;
+}
+
+.subhead{
+  max-width:760px;
+  margin:0 auto 30px;
+  font-size:1.15rem;
+}
+
+.button-group{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  border-radius:999px;
+  padding:16px 26px;
+  font-weight:bold;
+  min-width:220px;
+  transition:.2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:var(--magenta);
+  color:white;
+}
+
+.btn-secondary{
+  background:var(--teal);
+  color:white;
+}
+
+.btn-outline{
+  border:2px solid var(--purple);
+  color:var(--purple);
+  background:white;
+}
+
+.instructions{
+  margin:50px 0;
+  text-align:center;
+}
+
+.pill{
+  display:inline-block;
+  background:#f4e8f0;
+  color:var(--magenta);
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:bold;
+  letter-spacing:.08em;
+  margin-bottom:24px;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+}
+
+.step{
+  background:var(--light);
+  border-radius:18px;
+  padding:24px;
+  text-align:left;
+}
+
+.step-number{
+  color:var(--magenta);
+  font-size:2rem;
+  font-weight:bold;
+}
+
+.step h3{
+  color:var(--purple);
+  margin:8px 0;
+}
+
+.arrow{
+  text-align:center;
+  font-size:2rem;
+  color:var(--teal);
+  margin-top:20px;
+}
+
+.step .btn{
+  width:100%;
+  margin-top:20px;
+}
+
+.section-title{
+  text-align:center;
+  color:var(--purple);
+  margin-bottom:28px;
+  font-size:2rem;
+}
+
+.stay-connected{
+  text-align:center;
+  margin:40px 0;
+}
+
+.video{
+  margin:60px 0;
+}
+
+.video iframe{
+  width:100%;
+  aspect-ratio:16/9;
+  border:none;
+  border-radius:20px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+.card{
+  border:2px solid #eee;
+  border-radius:18px;
+  padding:24px;
+}
+
+.card h3{
+  color:var(--magenta);
+  margin-bottom:10px;
+}
+
+.footer{
+  text-align:center;
+  margin-top:60px;
+  padding-bottom:40px;
+}
+
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.socials a{
+  color:var(--teal);
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.sticky-vote{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  background:var(--teal);
+  color:white;
+  text-decoration:none;
+  padding:16px 22px;
+  border-radius:999px;
+  font-weight:bold;
+  box-shadow:0 8px 24px rgba(0,0,0,.18);
+  display:none;
+  z-index:999;
+}
+
+@media(max-width:640px){
+  .btn{
+    width:100%;
+  }
+
+  .sticky-vote{
+    right:12px;
+    bottom:12px;
+    font-size:.9rem;
+  }
+}
 </style>
 </head>
 
 <body>
-<div class="container" id="top">
+
+<div class="container">
 
 <section class="hero">
-<img class="logo" src="https://static.wixstatic.com/media/52c709_f273906f14d04743bb22e0cf99fd8cea~mv2.png/v1/fill/w_276,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/MindMeetsMusic_Horz_FullColor.png">
+
+<img class="logo"
+src="https://static.wixstatic.com/media/52c709_f273906f14d04743bb22e0cf99fd8cea~mv2.png/v1/fill/w_276,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/MindMeetsMusic_Horz_FullColor.png">
 
 <h1>Help Mind Meets Music Win Start Garden 5×5</h1>
 
-<p class="subhead">Your vote can help bring proven movement and music-based learning experiences to more children across the country.</p>
+<p class="subhead">
+Your vote can help bring proven movement and music-based learning experiences to more children across the country.
+</p>
 
 <div class="button-group">
 <a class="btn btn-outline" href="#learn-more">LEARN MORE</a>
-<a class="btn btn-secondary" href="#voting">VOTE FOR MMM</a>
+<a class="btn btn-secondary" href="#voting">VOTING INSTRUCTIONS</a>
 </div>
+
 </section>
 
 <section class="instructions" id="voting">
+
 <div class="pill">VOTING INSTRUCTIONS</div>
 
 <div class="steps">
+
 <div class="step">
 <div class="step-number">1</div>
 <h3>Register</h3>
-<p>Go to the Start Garden contest page and tap the <strong>Register</strong> button at the top.</p>
+<p>
+Go to the Start Garden contest page and click or tap the <strong>Register</strong> button at the top of the page.
+</p>
 <div class="arrow">→</div>
 </div>
 
 <div class="step">
 <div class="step-number">2</div>
 <h3>Come Back Here</h3>
-<p><strong>After registering, you may see a page asking for more information. You can ignore it.</strong></p>
-<p>You’re registered. Close that tab and come back here.</p>
-<a class="btn btn-primary" href="https://contests.startgarden.com/" target="_blank">REGISTER</a>
+
+<p>
+<strong>
+After registering, you may land on a page asking for a lot of additional information.
+You do not need to fill that out.
+</strong>
+</p>
+
+<p style="margin-top:10px;">
+If you see that page, you're already registered.
+Close the tab and come back here.
+</p>
+
+<a class="btn btn-primary"
+href="https://contests.startgarden.com/"
+target="_blank">
+REGISTER
+</a>
+
 </div>
 
 <div class="step">
 <div class="step-number">3</div>
 <h3>Vote for Mind Meets Music</h3>
-<p>On the voting page, look for the button that says <strong>Vote</strong>, not “Register to Vote.”</p>
-<a class="btn btn-secondary" href="https://contests.startgarden.com/ideas/mind-meets-music-5/" target="_blank">VOTE NOW</a>
+
+<p>
+On the voting page, look for the button that says <strong>Vote</strong>, not “Register to Vote.”
+</p>
+
+<a class="btn btn-secondary"
+href="https://contests.startgarden.com/ideas/mind-meets-music-5/"
+target="_blank">
+VOTE NOW
+</a>
+
 </div>
+
 </div>
+
 </section>
 
 <div class="stay-connected">
-<a class="btn btn-outline" href="#connect">STAY CONNECTED</a>
+<a class="btn btn-outline" href="#connect">
+STAY CONNECTED
+</a>
 </div>
 
 <section class="video" id="learn-more">
-<a class="btn btn-secondary sticky-vote" href="#voting">VOTE FOR MMM</a>
-<h2 class="section-title">See Mind Meets Music In Action</h2>
-<iframe src="https://www.youtube.com/embed/Fe8lKNBM-40" allowfullscreen></iframe>
+
+<a class="sticky-vote"
+href="https://contests.startgarden.com/ideas/mind-meets-music-5/"
+target="_blank">
+CAST YOUR VOTE
+</a>
+
+<h2 class="section-title">
+See Mind Meets Music In Action
+</h2>
+
+<iframe
+src="https://www.youtube.com/embed/Fe8lKNBM-40"
+allowfullscreen>
+</iframe>
+
 </section>
 
-<h2 class="section-title">Why Mind Meets Music Matters</h2>
+<h2 class="section-title">
+Why Mind Meets Music Matters
+</h2>
 
 <div class="cards">
-<div class="card"><h3>The Origin Story</h3><p>A choir director asked students to write thank-you notes after a performance. Many couldn’t write them. That moment became the spark for Mind Meets Music.</p></div>
-<div class="card"><h3>The Outcomes</h3><p>12.1 percentage point literacy gains. Achievement gaps reduced by 69% in Title I schools.</p></div>
-<div class="card"><h3>The Interruption</h3><p>After reaching 15,000 students, Dr. Monique Salinas suffered a near-fatal accident. The program closed. Nine years later, she returned to rebuild it.</p></div>
-<div class="card"><h3>The Pilot</h3><p>11 classrooms. 5 schools. 140 sessions. 92% implementation fidelity and outstanding teacher feedback.</p></div>
-<div class="card"><h3>The Scale</h3><p>The digital platform can bring the same curriculum to more than 65,000 elementary schools nationwide.</p></div>
-<div class="card"><h3>The Number That Matters</h3><p>$16.65 per student per year. Less than the cost of two school lunches.</p></div>
+
+<div class="card">
+<h3>The Origin Story</h3>
+<p>
+A choir director asked students to write thank-you notes after a performance. Many couldn't write them. That moment became the spark for Mind Meets Music.
+</p>
+</div>
+
+<div class="card">
+<h3>The Outcomes</h3>
+<p>
+12.1 percentage point literacy gains. Achievement gaps reduced by 69% in Title I schools.
+</p>
+</div>
+
+<div class="card">
+<h3>The Interruption</h3>
+<p>
+After reaching 15,000 students, Dr. Monique Salinas suffered a near-fatal accident. The program closed. Nine years later, she returned to rebuild it.
+</p>
+</div>
+
+<div class="card">
+<h3>The Pilot</h3>
+<p>
+11 classrooms. 5 schools. 140 sessions. 92% implementation fidelity and outstanding teacher feedback.
+</p>
+</div>
+
+<div class="card">
+<h3>The Scale</h3>
+<p>
+The digital platform can bring the same curriculum to more than 65,000 elementary schools nationwide.
+</p>
+</div>
+
+<div class="card">
+<h3>The Number That Matters</h3>
+<p>
+$16.65 per student per year. Less than the cost of two school lunches.
+</p>
+</div>
+
 </div>
 
 <div class="footer" id="connect">
-<h2>Stay Connected</h2>
+
+<h2 class="section-title">
+Stay Connected
+</h2>
+
 <div class="socials">
-<a href="https://www.mindmeetsmusic.com/" target="_blank">Website</a>
-<a href="https://www.facebook.com/MindMeetsMusic" target="_blank">Facebook</a>
-<a href="https://www.linkedin.com/in/monique-salinas-phd-mind-meets-music-ba66a514/" target="_blank">LinkedIn</a>
-</div>
+
+<a href="https://www.mindmeetsmusic.com/" target="_blank">
+Website
+</a>
+
+<a href="https://www.facebook.com/MindMeetsMusic" target="_blank">
+Facebook
+</a>
+
+<a href="https://www.linkedin.com/in/monique-salinas-phd-mind-meets-music-ba66a514/" target="_blank">
+LinkedIn
+</a>
+
 </div>
 
 </div>
+
+</div>
+
+<script>
+const learnMore = document.getElementById('learn-more');
+const stickyVote = document.querySelector('.sticky-vote');
+
+function toggleVoteButton() {
+  const rect = learnMore.getBoundingClientRect();
+
+  if (rect.top <= 0) {
+    stickyVote.style.display = 'block';
+  } else {
+    stickyVote.style.display = 'none';
+  }
+}
+
+window.addEventListener('scroll', toggleVoteButton);
+toggleVoteButton();
+</script>
+
 </body>
 </html>
+```
